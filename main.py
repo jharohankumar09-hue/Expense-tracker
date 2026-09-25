@@ -7,10 +7,9 @@ def add_expense():
 
     amount = float(input("Enter amount: "))
     category = input("Enter category: ")
-    date = input("Enter date: ")
-    description = input("Enter description: ")
+    date = input("Enter date (YYYY-MM-DD): ")
 
-    expenses.append([amount, category, date, description])
+    expenses.append([amount, category, date])
 
     print("Expense added successfully!")
 
@@ -25,8 +24,7 @@ def view_expenses():
             print(i + 1, ".", 
                   "₹", expenses[i][0],
                   "|", expenses[i][1],
-                  "|", expenses[i][2],
-                  "|", expenses[i][3])
+                  "|", expenses[i][2])
 
 
 def analyse_expenses():
@@ -68,8 +66,7 @@ def search_expense():
         if expense[1].lower() == search.lower():
             print("₹", expense[0],
                   "|", expense[1],
-                  "|", expense[2],
-                  "|", expense[3])
+                  "|", expense[2])
             found = True
 
     if found == False:
